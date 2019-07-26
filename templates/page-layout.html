@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<h1>PyPI Package Prediction</h1>
+<ul>
+  <h3>Enter a number of packages/projects. The model will predict what date this target could be reached on PyPI.</h3>
+<form method="POST">
+    <input name="text">
+    <input type="submit">
+</form>
+{% if message %}
+        <h3>{{ message }}</h3>
+    {% endif %}
+</ul>
+</html>
