@@ -28,10 +28,9 @@ In the file "polynomial regression pypi.py", a polynomial regression algorithm
 using the module sklearn is used to model the given data and then predict 
 future values. This model is pickled and stored in "pypi_predict_model.pkl".
 
-Finally, in app.py, this model is deployed on a website, where the user can 
+Finally, in "app.py", this model is deployed on a website, where the user can 
 enter the number of projects, and the model will predict the date this will be 
 achieved. The corresponding HTML file for this is "page-layout.html", stored in 
 the "templates" directory.
 
-The two CSV files and the pkl file are stored in:
-'\\dmc-l01-st01\diconium_marketing\20_KI\100_recruiting\data\original_files'
+The two CSV files are stored in your local computer and/or andrew google drive.
