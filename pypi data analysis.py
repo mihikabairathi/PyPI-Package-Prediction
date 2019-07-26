@@ -4,8 +4,7 @@ Graphing PyPI data and finding trends
 """
 import pandas as pd
 
-df = pd.read_csv('C:/Users/mihik/.spyder-py3/Diconium Internship/Week 2/' + \
-          'week 2 pypi/cleaned_project_and_date.csv')
+df = pd.read_csv('cleaned_project_and_date.csv')
 df = df.drop("Unnamed: 0", axis = 1)
 #extracting useful information and modifying it
 useful_df = pd.DataFrame()
@@ -30,4 +29,4 @@ final["So Far"] = bleh["On Day"]
 
 #############################################################
 
-#For the visualization, check the jupyter notebook (all graphs there)
+#For the visualization, check the .ipynb notebook (all graphs there)
