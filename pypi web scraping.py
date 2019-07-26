@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-Scraping data from the pypi website
-Last modified: 15/7/19
+This program scrapes data from the PyPI website
+and stores all the information in a CSV file.
 """
 
 import bs4
