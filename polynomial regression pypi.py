@@ -22,7 +22,7 @@ useful_df = useful_df.sort_values(by = "Release Date")
 useful_df = useful_df.reset_index()
 
 #number of projects released on that day
-random_df = useful_df.groupby("Release Date").agg({"Project Name": "count"})
+num_df = useful_df.groupby("Release Date").agg({"Project Name": "count"})
 
 #range of dates
 final_df = pd.DataFrame()
@@ -30,7 +30,7 @@ final_df["Release Date"] = pd.Series(pd.date_range(start = "2002-11-05", \
         end = "2019-07-18", freq = "d"))
 
 #merging tables to create final one
-final = pd.merge(final_df, random_df, on = "Release Date", how = "left")
+final = pd.merge(final_df, num_df, on = "Release Date", how = "left")
 final = final.fillna(0)
 final["On Day"] = final["Project Name"]
 final = final.drop("Project Name", axis = 1)
@@ -72,4 +72,3 @@ viz_polymonial()
 
 #pickle, save the model
 joblib.dump(pol_reg, "pypi_predict_model.pkl")
-
