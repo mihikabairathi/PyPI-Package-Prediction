@@ -13,8 +13,7 @@ from sklearn.preprocessing import PolynomialFeatures
 from sklearn.externals import joblib
 
 #extracting useful information and modifying it
-df = pd.read_csv('C:/Users/mihik/.spyder-py3/Diconium Internship/Week 2/' + \
-          'week 2 pypi/cleaned_project_and_date.csv')
+df = pd.read_csv('cleaned_project_and_date.csv')
 df = df.drop("Unnamed: 0", axis = 1)
 useful_df = pd.DataFrame()
 useful_df["Project Name"] = df.name
