@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-Cleans up the data scraped by "pypi web scraping.py"
+This program cleans up the data scraped by "pypi web scraping.py"
+and saves it in a csv file.
 """
 
 import pandas as pd
@@ -13,6 +14,7 @@ def change_month_to_number(datestr):
         "Jul":'7', "Aug":'8', "Sep":'9', "Oct":'10', "Nov":'11', "Dec":'12'}
     return mdict[datestr[:3]] + datestr[3:]
 
+#creates initial columns in dataframe
 df = pd.read_csv('project_and_date.csv')
 df.loc[-1] = ['0', [('0.0.0', 'Aug 6, 2017')], '0.1']  # adding a row
 df.index = df.index + 1  # shifting index
@@ -57,7 +59,3 @@ final_df['description'] = df.description.astype(str)
 final_df['description'] = final_df['description'].fillna("")
 
 final_df.to_csv('cleaned_project_and_date.csv')
-
-
-
-    
