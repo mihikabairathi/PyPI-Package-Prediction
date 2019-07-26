@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 """
-This program creates a website to return dates for any project 
-target input
+This program creates a website where the user can enter a 
+target number of projects/packages, and the website will
+display the approximate date this number will be reached
+on PyPI's website.
 """
 
 from flask import Flask, request, render_template
@@ -12,6 +14,8 @@ from datetime import date, timedelta
 
 #load model from file
 predictor = joblib.load("pypi_predict_model.pkl")
+
+#function that takes in number of projects, returns a day
 coefs = predictor.coef_
 inverseDate = inversefunc(np.poly1d(coefs[::-1]), domain = [0, 100000000], \
                           open_domain = [False, False])
@@ -54,6 +58,6 @@ def findDate(num_projects):
     return unmodified_date[-2:] + " " + mdict[unmodified_date[-5:-3]] + " " + \
                 unmodified_date[0:4]
 
-#running the site
+#running the site locally
 if __name__ == "__main__":
     app.run(port=6500)
