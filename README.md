@@ -32,5 +32,3 @@ Finally, in "app.py", this model is deployed on a website, where the user can
 enter the number of projects, and the model will predict the date this will be 
 achieved. The corresponding HTML file for this is "page-layout.html", stored in 
 the "templates" directory.
-
-The two CSV files are stored in your local computer and/or andrew google drive.
