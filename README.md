@@ -29,9 +29,8 @@ This entire project is programmed in Python 3. The different modules used are:
 All these modules can be installed by the "pip install" command.
 
 ### Instructions for using the model
-To use just the final web service, download the files "pypi_predict_model.pkl",  
-"templates", and "app.py", and execute the program. Then, type in "localhost:6500" in your
-browser to access the website created.
+To use just the final web service, download the files "pypi_predict_model.pkl", "templates", and "app.py", and execute the program.
+Then, type in "localhost:6500" in your browser to access the website created.
 
 ### Files (code)
 Here is a list of all the python files in the project:
@@ -48,7 +47,7 @@ model created.
 
 ### Other Files
 Here is a list of all the other files in the project:
-1. "project_and_date.csv": all the projects with their names, versions, 
+1. "project_and_date.csv": file of all the projects with their names, versions, 
 release dates, and descriptions, scraped by "pypi web scraping.py".
 2. "cleaned_project_and_date.csv": data cleaned by "pypi data cleaning.py".
 3. "pypi_predict_model.pkl": pickled file of the regression model.
