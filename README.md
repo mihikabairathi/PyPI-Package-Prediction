@@ -1,34 +1,56 @@
 # PyPI-Package-Prediction
 
-This project aims to predict when the number of projects uploaded on PyPI 
-reaches 200,000, by looking at the number of projects currently uploaded, and 
-the dates when the first versions of these projects were uploaded. 
+This project builds upon details of all the projects currently uploaded on 
+"https://pypi.org/" to create a model that can predict a date for when 
+a certain number of projects/packages uploaded on the website could be reached.
 
-This project was started to learn about the different aspects of data science
-and apply the skills learnt.
+### Motivation
+This project was developed to guide anyone to learn different aspects of Data 
+Science – collection of data, exploratory data analysis (EDA), predictive models 
+using ML algorithms, and deployment of a model - all while creating an application
+with practical use.
 
-A list of all PyPI project names was scraped from 'https://pypi.org/simple/'.
+### Prerequisites
+This entire project is programmed in Python 3. The different modules used are:
+1. BeautifulSoup4 (bs4)
+2. requests
+3. csv
+4. tqdm
+5. re
+6. codecs
+7. pandas
+8. matplotlib
+9. sklearn
+10. flask
+11. pynvrese
+12. numpy
+13. datetime
 
-In the file 'project_and_date.csv', a list of all the project names along with 
-details such as versions, release dates, and description is stored, after 
-scraping it off 'https://pypi.org/'. This is done using the Python modules 
-BeautifulSoup and Requests, in the file "pypi web scraping.py".
+All these modules can be installed by the "pip install" command.
 
-In the file 'cleaned_project_and_date.csv', a cleaned version of this data is 
-stored, using the Python module Pandas. It has separate columns for - name, 
-oldest release date, all the release dates, number of project versions, 
-all the project versions, and a description. This is done in the file
-"pypi data cleaning.py".
+### Instructions for using the model
+To use just the final web service, download the files "pypi_predict_model.pkl",  
+"templates", and "app.py", and execute the program. Then, type in "localhost:6500" in your
+browser to access the website created.
 
-In the file "pypi data analysis.py", the cleaned data is organised into a table
-and then several trends are analysed in the corresponding notebook, 
-"PyPI Data Analysis (22nd July).ipynb".
+### Files (code)
+Here is a list of all the python files in the project:
+1. "pypi web scraping.py": scrapes the data of all the projects on the
+website with the help of "https://pypi.org/simple/", a site that lists
+the names of all the uploaded projects.
+2. "pypi data cleaning.py": cleans up the data scraped above.
+3. "PyPI Data Analysis (22nd July).ipynb": performs an EDA on the clean data.
+4. "polynomial regression pypi.py": a polynomial regression model is 
+created by training it on part of the data available, so that it can predict
+future dates as well.
+5. "app.py": develops a website that provides a simple interface to use the
+model created.
 
-In the file "polynomial regression pypi.py", a polynomial regression algorithm
-using the module sklearn is used to model the given data and then predict 
-future values. This model is pickled and stored in "pypi_predict_model.pkl".
-
-Finally, in "app.py", this model is deployed on a website, where the user can 
-enter the number of projects, and the model will predict the date this will be 
-achieved. The corresponding HTML file for this is "page-layout.html", stored in 
-the "templates" directory.
+### Other Files
+Here is a list of all the other files in the project:
+1. "project_and_date.csv": all the projects with their names, versions, 
+release dates, and descriptions, scraped by "pypi web scraping.py".
+2. "cleaned_project_and_date.csv": data cleaned by "pypi data cleaning.py".
+3. "pypi_predict_model.pkl": pickled file of the regression model.
+4. "page-layout.html": corresponding HTML file for "app.py", stored in 
+the "templates directory"
