@@ -13,8 +13,7 @@ def change_month_to_number(datestr):
         "Jul":'7', "Aug":'8', "Sep":'9', "Oct":'10', "Nov":'11', "Dec":'12'}
     return mdict[datestr[:3]] + datestr[3:]
 
-df = pd.read_csv('C:/Users/mihik/.spyder-py3/Diconium Internship/Week 2/' + \
-          'week 2 pypi/project_and_date.csv')
+df = pd.read_csv('project_and_date.csv')
 df.loc[-1] = ['0', [('0.0.0', 'Aug 6, 2017')], '0.1']  # adding a row
 df.index = df.index + 1  # shifting index
 df.sort_index(inplace=True) 
@@ -57,8 +56,7 @@ final_df['all_dates'] = all_dates
 final_df['description'] = df.description.astype(str)
 final_df['description'] = final_df['description'].fillna("")
 
-final_df.to_csv('C:/Users/mihik/.spyder-py3/Diconium Internship/Week 2/' + \
-          'week 2 pypi/cleaned_project_and_date.csv')
+final_df.to_csv('cleaned_project_and_date.csv')
 
 
 
