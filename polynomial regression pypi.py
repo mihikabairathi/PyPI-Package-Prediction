@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """
 This program extracts the required data from the PyPI data collected and
-then creates a model that can be used to predict a date for which an
-input of the number of projects published can be achieved.
+then creates a model that can be used to predict a date on which a 
+target number of projects published can be achieved.
 """
 
 import pandas as pd
@@ -40,6 +40,7 @@ final["So Far"] = temp["On Day"]
 final = final.drop("On Day", axis = 1)
 final = final.reset_index()
 final = final.drop("Release Date", axis = 1)
+#this column assigns a number to each date, with 0 assigned to 2002-11-05
 final["Day Num"] = pd.Series(range(len(final["So Far"])))
 
 #test and train data
@@ -69,6 +70,6 @@ def viz_polymonial():
 
 viz_polymonial()
 
-#pickle, save the data
+#pickle, save the model
 joblib.dump(pol_reg, "pypi_predict_model.pkl")
 
