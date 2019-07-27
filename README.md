@@ -55,7 +55,7 @@ release dates, and descriptions, scraped by "pypi web scraping.py".
 the "templates directory"
 
 ### License
-This project is licensed under the MIT License - see the LICENSE.md file for details.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 ### Author
 Mihika Bairathi
