@@ -53,3 +53,9 @@ release dates, and descriptions, scraped by "pypi web scraping.py".
 3. "pypi_predict_model.pkl": pickled file of the regression model.
 4. "page-layout.html": corresponding HTML file for "app.py", stored in 
 the "templates directory"
+
+### License
+This project is licensed under the MIT License - see the LICENSE.md file for details.
+
+### Author
+Mihika Bairathi
